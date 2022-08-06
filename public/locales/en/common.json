@@ -1,0 +1,21 @@
+{
+  "greeting": "Hello, {{name}}",
+  "log-out": "Sign out",
+  "login-in": "Log In",
+  "password": "Password",
+  "error-title": "Error",
+  "name": "Name",
+  "e-mail": "E-mail",
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "company-title": "Contacts Management",
+  "contact-form-edit": "Edit Contact",
+  "contact-form-create": "Create Contact",
+  "edited-success-message": "Edited successfully",
+  "created-success-message": "Registered successfully",
+  "deleted-success-message": "Deleted successfully",
+  "empty-data": "Click the button below to add a contact :)"
+
+
+}
