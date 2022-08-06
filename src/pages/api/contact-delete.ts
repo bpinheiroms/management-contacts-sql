@@ -8,11 +8,12 @@ handler.use(authorize);
 
 handler.delete(async (req: any, res: NextApiResponse) => {
   const { id } = req.query;
+  const identifier = parseInt(id);
 
   try {
     const contact = await prisma.contacts.findUnique({
       where: {
-        id: id,
+        id: identifier,
       },
     });
 
@@ -22,7 +23,7 @@ handler.delete(async (req: any, res: NextApiResponse) => {
 
     const updateContact = await prisma.contacts.delete({
       where: {
-        id: id,
+        id: identifier,
       },
     });
 

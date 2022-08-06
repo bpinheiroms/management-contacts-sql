@@ -10,10 +10,12 @@ handler.use(authorize);
 handler.put(async (req: any, res: NextApiResponse) => {
   const { email, name, id } = req.body;
 
+  const identifier = parseInt(id);
+
   try {
     const contact = await prisma.contacts.findUnique({
       where: {
-        id: id,
+        id: identifier,
       },
     });
 
@@ -23,7 +25,7 @@ handler.put(async (req: any, res: NextApiResponse) => {
 
     const updateContact = await prisma.contacts.update({
       where: {
-        id: id,
+        id: identifier,
       },
       data: {
         email,

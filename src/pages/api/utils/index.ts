@@ -9,7 +9,7 @@ const expiresIn = '1h';
 const createToken = (user: any) => {
   return jwt.sign(
     {
-      sub: user.id,
+      sub: parseInt(user.id.toString()),
       email: user.email,
       role: user.role,
       name: user.name,
