@@ -3,16 +3,18 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+  // shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
 }
 
 model Users {
-  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  id       Int        @id @default(autoincrement())
   name     String
   email    String     @unique
   password String
@@ -21,9 +23,9 @@ model Users {
 }
 
 model Contacts {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  id     Int    @id @default(autoincrement())
   name   String
   email  String @unique
-  userId String
+  userId Int
   user   Users  @relation(fields: [userId], references: [id])
 }
