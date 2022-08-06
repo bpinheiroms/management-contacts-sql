@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
